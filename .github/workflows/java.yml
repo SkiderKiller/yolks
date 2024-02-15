@@ -38,9 +38,9 @@ jobs:
           password: ${{ secrets.password }}
       - uses: docker/build-push-action@v5
         with:
-          context: ./wine
-          file: ./wine/${{ matrix.tag }}/Dockerfile
-          platforms: linux/amd64
+          context: ./java
+          file: ./java/${{ matrix.tag }}/Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            registry.cn-hangzhou.aliyuncs.com/yunmeng/yldemo:wine_${{ matrix.tag }}
+            registry.cn-hangzhou.aliyuncs.com/yunmeng/yldemo:java_${{ matrix.tag }}
